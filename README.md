@@ -5,7 +5,7 @@ The accurate identification of wool and cashmere fibers is crucial for textile q
 
 Compared to classical image augmentation methods, our approach achieves perfor mance gains of +0.02 F1-Confidence and +1.88% mAP@0.5 in detection tasks, along with +0.05 F1-score, +4.83% precision, and +2.51% recall in classification tasks. These improvements demonstrate the method’s efficacy in generating high-fidelity, diverse data samples for intelligent fiber detection, while establishing an effective optimization strategy for deep learning model training.
 
-![Figure 4: Visual Comparison of Generated Wool and Cashmere Fibers](/imgs/2025-12-14/LTpZx2k11a7eU2c3.png)
+![Figure 4: Visual Comparison of Generated Wool and Cashmere Fibers](images/Figure4.png)
 
 *Figure 4 compares generated samples from our DFt model against state-of-the-art baselines including DataDream, U-ViT, and various wool/cashmere types. The proposed method demonstrates exceptional preservation of microscopic scale patterns essential for accurate fiber identification.*
 # Pretrained Models
