@@ -9,16 +9,16 @@ Compared to classical image augmentation methods, our approach achieves perfor m
 
 *Figure 4 compares generated samples from our DFt model against state-of-the-art baselines including DataDream, U-ViT, and various wool/cashmere types. The proposed method demonstrates exceptional preservation of microscopic scale patterns essential for accurate fiber identification.*
 # Pretrained Models
-Pre-trained models can be downloaded [here](https://drive.google.com/file/d/13StUdrjaaSXjfqqF7M47BzPyhMAArQ4u/view?usp=share_link) (256*256 DFt)
+💡Pre-trained models can be downloaded [here](https://drive.google.com/file/d/13StUdrjaaSXjfqqF7M47BzPyhMAArQ4u/view?usp=share_link) (256*256 DFt)
 
 # Preparation Before Training and Evaluation
 ### Autoencoder
-Download `stable-diffusion` directory from this [link](https://drive.google.com/drive/folders/1yo-XhqbPue3rp5P57j6QbA5QZx6KybvP?usp=sharing) (which contains image autoencoders converted from [Stable Diffusion](https://github.com/CompVis/stable-diffusion)). Put the downloaded directory as `assets/stable-diffusion` in this codebase. The autoencoders are used in latent diffusion models.
+💡Download `stable-diffusion` directory from this [link](https://drive.google.com/drive/folders/1yo-XhqbPue3rp5P57j6QbA5QZx6KybvP?usp=sharing) (which contains image autoencoders converted from [Stable Diffusion](https://github.com/CompVis/stable-diffusion)). Put the downloaded directory as `assets/stable-diffusion` in this codebase. The autoencoders are used in latent diffusion models.
 
 ### Reference statistics for FID
 Download `fid_stats` directory from this [link](https://drive.google.com/drive/folders/1yo-XhqbPue3rp5P57j6QbA5QZx6KybvP?usp=sharing) (which contains reference statistics for FID). Put the downloaded directory as `assets/fid_stats` in this codebase. In addition to evaluation, these reference statistics are used to monitor FID during the training process.
 ### Data
-256*256: Put the standard yours dataset (which contains the `train` and `val` directory) to `assets/datasets/wool_256`.
+💡256*256: Put the standard yours dataset (which contains the `train` and `val` directory) to `assets/datasets/wool_256`.
 
 ### environment
 
@@ -34,14 +34,14 @@ pip install -r requirements.txt
 ```
 
 ## Training
-You can use the following commands to conduct model training.
+🪐You can use the following commands to conduct model training.
 
 ```
 accelerate launch --multi_gpu --num_processes 8 --mixed_precision fp16 train.py --config=configs/wool_256.py 
 ```
 ## generate
-Run the following code for inference to generate the required synthetic image. 
-If you want to keep these images, set `--config.sample.path=/save/dir`.
+🪐Run the following code for inference to generate the required synthetic image. 
+🛸If you want to keep these images, set `--config.sample.path=/save/dir`.
 ```
 accelerate launch --multi_gpu --num_processes 8 --mixed_precision fp16 eval.py --config=configs/wool_256.py --nnet_path=wool_256_DFt.pth
 ```
